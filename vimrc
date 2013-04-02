@@ -31,8 +31,6 @@ syntax enable
 set background=dark
 colorscheme solarized
 
-let vimclojure#HighlightBuiltins=1
-let vimclojure#ParenRainbow=1
 
 "clears search buffer with ,/
 nmap <silent> ,/ : nohlsearch<CR>
@@ -46,3 +44,27 @@ map ,hi :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 
 "avoid having to reach up to the escape key.
 imap jj <Esc>
+
+"Set up colors to avoid super light colors with my vim colorscheme
+let g:rbpt_colorpairs = [
+  \ ['brown', 'RoyalBlue3'],
+  \ ['darkblue', 'SeaGreen3'],
+  \ ['darkgray', 'DarkOrchid3'],
+  \ ['darkgreen', 'firebrick3'],
+  \ ['darkcyan', 'RoyalBlue3'],
+  \ ['darkred', 'SeaGreen3'],
+  \ ['darkmagenta', 'DarkOrchid3'],
+  \ ['brown', 'firebrick3'],
+  \ ['darkmagenta', 'DarkOrchid3'],
+  \ ['darkblue', 'firebrick3'],
+  \ ['darkgreen', 'RoyalBlue3'],
+  \ ['darkcyan', 'SeaGreen3'],
+  \ ['darkred', 'DarkOrchid3'],
+  \ ['red', 'firebrick3'],
+  \ ]
+
+"Set up clojure rainbow parens to be always on
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
