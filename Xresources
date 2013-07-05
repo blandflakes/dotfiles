@@ -1,8 +1,6 @@
 xterm*termName: xterm-256color
-xterm*faceName: Terminus:style=Regular:size=10
+xterm*faceName: Terminus:style=Regular:size=13
 xterm*Font: -*-clean-medium-*-normal-*-13-*-*-*-*-80-*-*
-!xterm*Background: white
-!xterm*Foreground: black 
 xterm*scrollBar: false
 xterm*scrollKey: true
 xterm*saveLines: 10000
