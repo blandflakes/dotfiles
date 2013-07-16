@@ -22,6 +22,7 @@ set visualbell
 set noerrorbells
 set nobackup
 set noswapfile
+set ruler
 
 syntax enable
 
