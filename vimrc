@@ -24,7 +24,9 @@ set nobackup
 set noswapfile
 set ruler
 
+execute pathogen#infect()
 syntax enable
+filetype plugin indent on
 
 "I would expect to need background=light here for the light bg, but dark
 "does it.
@@ -43,3 +45,13 @@ map ,hi :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 
 "avoid having to reach up to the escape key.
 imap jj <Esc>
+
+"Clojure-specific settings
+let g:clojure_fuzzy_indent = 1
+let g:clojure_align_multiline_strings = 1
+let g:clojure_align_subforms = 1
+
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
