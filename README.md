@@ -8,12 +8,17 @@ Setup is:
 * xterm (configured with Xresources to use Solarized)
 * dircolors
 * solarized ansi-universal dircolors. Don't forget this - causes confusion.
-* vim (with solarized colorscheme)
-* vim-clojure-static
-  * Turn on all options for indentation
-* pathogen
-* vim rainbow parens
-
-Remaining configuration files/setup to deal with:
+* vim (with solarized colorscheme). Plugins:
+  * pathogen
+  * vim-clojure-static (ships with modern versions of vim)
+  * rainbow parens
+  * fireplace (works best with a cider repl in the project)
+  * leiningen (has dependencies)
+    * fireplace
+    * projectionist
+    * dispatch
+Remaining configuration files/setup to deal with or test:
 
 * tmux
+* consider a paredit alternative
+* Does leiningen.vim affect non-clojure loads?
