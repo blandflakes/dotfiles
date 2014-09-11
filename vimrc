@@ -1,52 +1,66 @@
+" Highlight words as they are tped
 set incsearch
-set ignorecase
-set smartcase
-set showmatch
+" Highlight search results
 set hlsearch
+" Make search case insensitive
+set ignorecase
+" ...Unless we type cased
+set smartcase
+" Make cursor jump to match when inserting a brace
+set showmatch
 
-set nowrap
+" Tabs = 2 spaces
 set tabstop=2
+" Allow backspacing over auto indentation, line breaks,
+" and start of an insert
 set backspace=indent,eol,start
+" Automatically copy indentation from previous line
 set autoindent
+" Make indent copy characters used to indent previous line
 set copyindent
+" Show line numbers
 set number
+" Show ruler (location within line and document)
+set ruler
+" Indent operations should move 2 spaces
 set shiftwidth=2
+" Move indented items to the next multiple of shiftwidth
 set shiftround
+" Use shiftwidth for tab width
 set smarttab
+" Use spaces instead of tabs
 set expandtab
 
+" Expand history
 set history=100
+" Increase number of undo levels
 set undolevels=1000
-set notitle
+" Flash instead of beeping
 set visualbell
+" Disable error bells
 set noerrorbells
+" Disable backups
 set nobackup
+" Disable swap file
 set noswapfile
-set ruler
 
 execute pathogen#infect()
 syntax enable
 filetype plugin indent on
 
-"I would expect to need background=light here for the light bg, but dark
-"does it.
+" I would expect to need background=light here for the light bg, but dark
+" does it.
 set background=dark
 colorscheme solarized
 
-"clears search buffer with ,/
-nmap <silent> ,/ : nohlsearch<CR>
-
-"use w!! to write to a file that needs sudo
+" Use w!! to write to a file that needs sudo
 cnoreabbrev <expr> w!!
                 \((getcmdtype() == ':' && getcmdline() == 'w!!')
                 \?('!sudo tee % >/dev/null'):('w!!'))
-
-map ,hi :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")
-
-"avoid having to reach up to the escape key.
+" Avoid having to reach up to the escape key.
 imap jj <Esc>
 
-"Clojure-specific settings
+" Clojure-specific settings
 let g:clojure_fuzzy_indent = 1
 let g:clojure_align_multiline_strings = 1
 let g:clojure_align_subforms = 1
