@@ -45,7 +45,8 @@ set nobackup
 set noswapfile
 
 execute pathogen#infect()
-syntax enable
+syntax on
+filetype on
 filetype plugin indent on
 
 " I would expect to need background=light here for the light bg, but dark
@@ -64,6 +65,14 @@ imap jj <Esc>
 let g:clojure_fuzzy_indent = 1
 let g:clojure_align_multiline_strings = 1
 let g:clojure_align_subforms = 1
+
+" Idris-specific settings
+let g:idris_indent_if = 3
+let g:idris_indent_case = 5
+let g:idris_indent_let = 4
+let g:idris_indent_where = 6
+let g:idris_indent_do = 3
+let g:idris_indent_rewrite = 8
 
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound

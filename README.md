@@ -5,9 +5,9 @@ Contains configuration files that I share across installations.
 
 Setup is:
 
-* xterm (configured with Xresources to use Solarized)
 * dircolors
 * solarized ansi-universal dircolors. Don't forget this - causes confusion.
+  * Needs coreutils on OSX for gdircolors
 * vim (with solarized colorscheme). Plugins:
   * pathogen
   * vim-clojure-static (ships with modern versions of vim)
@@ -17,8 +17,9 @@ Setup is:
     * fireplace
     * projectionist
     * dispatch
-Remaining configuration files/setup to deal with or test:
+* IntelliJ
 
+Remaining configuration files/setup to deal with or test:
 * tmux
 * consider a paredit alternative
 * Does leiningen.vim affect non-clojure loads?
